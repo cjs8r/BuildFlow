@@ -20,8 +20,9 @@ function Spinner() {
 function Protected({ children, adminOnly = false }) {
   const { user, profile, loading, profileReady } = useAuth()
 
-  if (loading || !profileReady) return <Spinner />
-  if (!user) return <Navigate to="/auth" replace />
+ if (loading) return <Spinner />
+if (!user) return <Navigate to="/auth" replace />
+if (!profileReady) return <Spinner />
 
   if (profile?.suspended) return (
     <div className="min-h-screen flex items-center justify-center px-4">
