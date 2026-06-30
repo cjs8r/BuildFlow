@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-charcoal-50 text-charcoal-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .progress-track {
+    @apply relative h-3 rounded-full bg-charcoal-200 overflow-visible;
+  }
+  .progress-fill {
+    @apply absolute inset-y-0 left-0 rounded-full transition-all duration-500;
+  }
+  .progress-marker {
+    @apply absolute top-1/2 -translate-y-1/2 w-0.5 h-5 rounded-full bg-charcoal-800 z-10;
+  }
+}
